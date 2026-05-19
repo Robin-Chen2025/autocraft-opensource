@@ -113,7 +113,6 @@ npm run dev
 ### Access System
 - **Frontend Interface**: http://localhost:8080
 - **API Documentation**: http://localhost:9001/docs
-- **Online Demo**: http://116.205.236.25:8080
 
 ## 👥 Who Should Use It?
 

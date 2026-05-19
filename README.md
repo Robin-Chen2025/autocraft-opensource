@@ -113,7 +113,6 @@ npm run dev
 ### 访问系统
 - **前端界面**：http://localhost:8080
 - **API文档**：http://localhost:9001/docs
-- **在线演示**：http://116.205.236.25:8080
 
 ## 👥 谁适合使用？
 
