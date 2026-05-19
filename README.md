@@ -180,6 +180,11 @@ bash openclaw-config/setup-agents.sh
 ### 前端配置
 API 基础路径配置在 `src/api/` 目录下的各个文件中。
 
+## 📚 文档
+
+- [系统操作手册](docs/OPERATION_MANUAL.md) - 完整功能使用指南
+- [部署指南](DEPLOYMENT.md) - 生产环境部署
+
 ## 🤝 贡献指南
 
 欢迎提交 Issue 和 Pull Request！
