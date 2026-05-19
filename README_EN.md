@@ -1,30 +1,141 @@
-# AutoCraft - AI-Powered Task Management & Execution Platform
+# AutoCraft - AI-Powered Project Execution Platform
 
-[中文文档](README.md)
+[English](README_EN.md) | [中文](README.md)
 
-AutoCraft is an AI-based task management system that supports a four-level management structure (Project → Phase → Plan → Task), with integrated AI sub-agent automatic execution and task verification.
+> **🚀 Empower non-technical product managers to drive complex software development projects, 3-6x faster**
 
-> **💡 Scope**: AutoCraft itself is a **general-purpose task management platform**, suitable for any scenario requiring structured task decomposition and AI automated execution (software development, content creation, data analysis, operations workflows, etc.). The built-in `autocraft-dev` Skill currently focuses on **software development projects**. You can create Skills for your own domain based on this template, contributions welcome.
+AutoCraft is a platform that perfectly combines human project management wisdom with AI automatic execution capabilities. **Humans focus on design decisions, AI focuses on coding execution**, turning ideas into running products quickly.
 
-## ✨ Core Features
+## ✨ Core Value
 
-- **Four-Level Project Management**: Project → Phase → Plan → Task hierarchy
-- **AI Task Execution**: Integrated OpenClaw AI agents for automated task execution
-- **Automatic Verification**: Verification workflow triggered automatically after task completion
-- **Task Locking Mechanism**: Prevents concurrent conflicts, ensures safe task execution
-- **Template-Driven**: Execution and verification prompt templates are configurable
+### 🎯 What Problems Does It Solve?
+- **Product managers have ideas but no tech team?**
+- **Development projects take too long with high communication costs?**
+- **Want to validate ideas without heavy resource investment?**
 
-## 🏗️ Tech Stack
+### 💡 What Solution Does It Provide?
+- **Humans**: Focus on design, decisions, creativity
+- **AI**: Automatically handles coding, testing, verification
+- **Result**: Faster, cheaper, higher quality products
+
+## 📊 Real Case Study: Complete Education Platform Built in 10 Days
+
+We used AutoCraft to complete the full development of DeepTutor-Lite education platform in **just 10 days**:
+
+### Execution Data
+```
+📈 Project Scale:
+   Plan Sheets: 19
+   Tasks: 71
+   Successful: 70 (99% success rate)
+
+🔧 Quality Metrics:
+   Program BUGs Found: 7 (all automatically fixed)
+   Test Coverage: 100% (L1+L2+L3)
+   Human Intervention: Only 3 key decisions
+
+⏱️ Efficiency Comparison:
+   Traditional Estimate: 1-2 months
+   AutoCraft: 10 days (3-6x faster)
+```
+
+### Technical Output
+- **Backend**: FastAPI + SQLite (complete REST API)
+- **Frontend**: Vue 3 + TypeScript (modern interface)
+- **Function Modules**: Knowledge Graph, Question Management, AI Learning Reports, Image Recognition, etc.
+- **Testing System**: Unit Tests + Integration Tests + End-to-End Tests
+
+## 🏗️ Technical Architecture
 
 ### Backend
-- **Framework**: FastAPI
-- **Database**: SQLite (via SQLAlchemy ORM)
-- **AI Integration**: OpenClaw Agent
+- **Framework**: FastAPI (modern, high-performance)
+- **Database**: SQLite (lightweight, easy deployment)
+- **ORM**: SQLAlchemy
+- **AI Integration**: OpenClaw Agent System
 
 ### Frontend
 - **Framework**: Vue 3 + TypeScript
-- **Build Tool**: Vite
 - **UI Components**: Element Plus
+- **Build Tool**: Vite
+- **State Management**: Pinia
+
+## 🎯 Four Major Technological Innovations
+
+### 1. Four-Level Project Management System
+```
+Project → Phase → Plan → Task
+```
+Clear hierarchical structure supporting complex project decomposition and management.
+
+### 2. Separated Responsibility Execution Model
+```
+BUILD-TEST (write tests) → TEST-RUN (run tests) → BUILD-CODE (fix bugs)
+```
+Prevents AI "cheating" in testing, ensuring test authenticity and code quality.
+
+### 3. Intelligent Verification System
+Each task is automatically verified upon completion, including:
+- Syntax checking
+- Test execution
+- Documentation consistency checking
+- Comprehensive scoring (≥80 points to pass)
+
+### 4. Task Locking Mechanism
+- Lock before execution → Execute → Unlock
+- Lock before verification → Verify → Unlock
+- Prevents concurrency conflicts, ensures execution safety
+
+## 🚀 Quick Start
+
+### One-Click Deployment (5 minutes)
+```bash
+# Clone the project
+git clone https://github.com/Robin-Chen2025/autocraft-opensource.git
+cd autocraft-opensource
+
+# Run deployment script
+bash scripts/deploy.sh
+```
+
+### Manual Deployment
+```bash
+# Backend startup
+cd backend
+pip install -r requirements.txt
+python3 -m uvicorn main:app --host 0.0.0.0 --port 9001
+
+# Frontend startup
+cd ..
+npm install
+npm run dev
+```
+
+### Access System
+- **Frontend Interface**: http://localhost:8080
+- **API Documentation**: http://localhost:9001/docs
+- **Online Demo**: http://116.205.236.25:8080
+
+## 👥 Who Should Use It?
+
+### 👨‍💼 Product Managers / Entrepreneurs
+- Have ideas but lack technical resources
+- Want to quickly validate product ideas
+- Need to control development costs and timelines
+
+### 👨‍💻 Development Teams
+- Liberate repetitive coding work
+- Improve code quality and consistency
+- Knowledge沉淀 and process standardization
+
+### 🧠 Tech Enthusiasts
+- Explore practical AI applications in real projects
+- Learn modern development best practices
+- Contribute to cutting-edge open source projects
+
+### 🏢 Small and Medium Enterprises
+- Reduce technical team costs
+- Accelerate product iteration speed
+- Improve project success rate
 
 ## 📁 Project Structure
 
@@ -42,7 +153,7 @@ autocraft/
 │   ├── api/                 # API calls
 │   ├── components/          # Vue components
 │   ├── views/               # Page views
-│   ├── router/              # Router configuration
+│   ├── router/              # Routing configuration
 │   └── types/               # TypeScript types
 ├── openclaw-config/         # OpenClaw configuration
 │   ├── patches/             # Patch files
@@ -50,162 +161,88 @@ autocraft/
 └── scripts/                 # Deployment scripts
 ```
 
-## 🚀 Quick Start
-
-### Requirements
-- Python 3.10+
-- Node.js 18+
-- npm or pnpm
-- OpenClaw (for AI sub-agents)
-
-### One-Click Deployment
-
-```bash
-# Clone the project
-git clone https://github.com/your-username/autocraft.git
-cd autocraft
-
-# Run deployment script
-bash scripts/deploy.sh
-```
-
-### Manual Deployment
-
-#### Backend Setup
-
-```bash
-cd backend
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# or venv\Scripts\activate  # Windows
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Initialize database
-python init_db.py
-
-# Start service
-uvicorn main:app --host 0.0.0.0 --port 9001 --reload
-```
-
-Backend API docs: http://localhost:9001/docs
-
-#### Frontend Setup
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
-Frontend interface: http://localhost:5173
-
-### OpenClaw Sub-Agent Configuration
-
-AutoCraft uses OpenClaw to run AI sub-agents. Configuration required:
-
-```bash
-# 1. Apply patches (Important)
-bash openclaw-config/patches/apply-patch.sh
-
-# 2. Create sub-agents
-bash openclaw-config/setup-agents.sh
-
-# 3. Model configuration managed by OpenClaw
-```
-
-See [Deployment Guide](DEPLOYMENT_EN.md) and [OpenClaw Configuration](openclaw-config/README.md) for details.
-
-## 📖 API Documentation
-
-### Project Management
-- `GET /profiles` - Get project list
-- `POST /profiles` - Create project
-- `GET /profiles/{id}` - Get project details
-- `PUT /profiles/{id}` - Update project
-- `DELETE /profiles/{id}` - Delete project
-
-### Phase Management
-- `GET /profiles/{profile_id}/phases` - Get phase list
-- `POST /profiles/{profile_id}/phases` - Create phase
-- `PUT /phases/{phase_id}` - Update phase
-- `DELETE /phases/{phase_id}` - Delete phase
-
-### Plan Management
-- `GET /plans` - Get plan list
-- `POST /plans` - Create plan
-- `GET /plans/{plan_id}` - Get plan details
-- `PUT /plans/{plan_id}` - Update plan
-- `DELETE /plans/{plan_id}` - Delete plan
-
-### Task Management
-- `GET /tasks` - Get task list
-- `GET /tasks/{task_no}` - Get task details
-- `PUT /tasks/{task_no}` - Update task
-
-### Task Execution
-- `POST /api/v2/tasks/{task_id}/execute` - Execute task
-- `GET /api/v2/tasks/{task_id}/status` - Get execution status
-
 ## 📝 Development Roadmap
 
 ### Completed ✅
 - [x] Four-level project management structure
 - [x] AI task execution engine
-- [x] Automatic verification workflow
+- [x] Automatic verification process
 - [x] Task locking mechanism
-- [x] Template-based prompts
+- [x] Templated prompts
 
 ### In Progress 🔄
 - [ ] Task execution log details page
 - [ ] Real-time execution progress push
 
 ### Planned 📋
-- [ ] **Issue Tracking System** - Issue tracking and resolution management
-- [ ] **Knowledge Base Management** - Knowledge points and knowledge graph management
-- [ ] **Checklists** - Task execution checklists
-- [ ] **User Permission Management** - Multi-user, role-based permissions
-- [ ] **Data Statistics Reports** - Project progress, execution efficiency statistics
+- [ ] **Issue Tracking System** - Problem tracking and solution management
+- [ ] **Knowledge Base Management** - Knowledge points, knowledge graph management
+- [ ] **Checklist System** - Task execution checklists
+- [ ] **User Permission Management** - Multi-user, role permissions
+- [ ] **Data Statistical Reports** - Project progress, execution efficiency statistics
 - [ ] **Task Templates** - Common task template library
-- [ ] **Batch Operations** - Batch create, execute, verify
+- [ ] **Batch Operations** - Batch creation, execution, verification
 - [ ] **Webhook Notifications** - Task status change notifications
 - [ ] **Docker Deployment** - One-click Docker deployment
 
-## 🔧 Configuration
-
-### Backend Configuration
-Database file defaults to `backend/tasks.db`, configurable in `database.py`.
-
-### Frontend Configuration
-API base path configured in each file under `src/api/` directory.
-
 ## 📚 Documentation
 
-- [System Operation Manual](docs/OPERATION_MANUAL_EN.md) - Complete usage guide
-- [Deployment Guide](DEPLOYMENT_EN.md) - Production deployment
+- [System Operation Manual](docs/OPERATION_MANUAL.md) - Complete functionality usage guide
+- [Deployment Guide](DEPLOYMENT.md) - Production environment deployment
+- [API Reference Manual](docs/api-reference.md) - Complete API documentation
+- [Template Writing Guide](docs/template-guide.md) - How to create custom templates
 
-## 🤝 Contributing
+## 🤝 Contribution Guidelines
 
-Issues and Pull Requests are welcome!
+Welcome to submit Issues and Pull Requests!
 
 ### Development Guide
 1. Fork this repository
-2. Create feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to branch (`git push origin feature/AmazingFeature`)
-5. Create Pull Request
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Create a Pull Request
+
+### Contribution Types
+- **Code Improvements**: Optimize existing features or add new features
+- **Documentation Enhancement**: Improve usage documentation or add tutorials
+- **Template Contributions**: Share execution templates for your domain
+- **Case Studies**: Submit successful application cases
+
+## 🌟 Community & Support
+
+### Getting Help
+- **GitHub Issues**: Report BUGs or request features
+- **GitHub Discussions**: Technical discussions and Q&A
+- **Mailing List**: Update notifications and important announcements
+
+### Success Case Collection
+We are collecting AutoCraft application cases from various industries. If you:
+- Have completed actual projects using AutoCraft
+- Have innovative applications in specific domains
+- Have experience with performance optimization or feature expansion
+
+**Contact us**, your case will help more people understand and use AutoCraft!
 
 ## 📄 License
 
-MIT License
+MIT License - See [LICENSE](LICENSE) file for details
 
 ## 🙏 Acknowledgments
 
 - [OpenClaw](https://github.com/openclaw/openclaw) - AI agent runtime
 - [FastAPI](https://fastapi.tiangolo.com) - Modern API framework
 - [Vue.js](https://vuejs.org) - Progressive frontend framework
+- All contributors and users for their support
+
+---
+
+## 💭 Words from the Author
+
+As a solutions consultant, I deeply understand the challenges faced by non-technical entrepreneurs and product managers when driving technology projects. AutoCraft was born to solve this very problem.
+
+**We believe**: The future of work is human creativity plus AI execution. AutoCraft is the first step toward that future.
+
+Welcome to join us in exploring new work modes in the AI era!
+
+*—— AutoCraft Project Founder, Robin Chen*
