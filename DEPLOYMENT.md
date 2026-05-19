@@ -62,6 +62,21 @@ npm run build
 
 ## 🔧 OpenClaw 子代理配置
 
+### ⚠️ 重要：应用补丁
+
+AutoCraft 需要 OpenClaw 补丁来修复 `--agent` 与 `--session-id explicit` 冲突问题。
+
+```bash
+# 应用补丁
+bash openclaw-config/patches/apply-patch.sh
+```
+
+**补丁作用：** 使 explicit session 能正确实现会话隔离，确保每个任务使用独立的会话。
+
+详见 [openclaw-config/patches/README.md](openclaw-config/patches/README.md)
+
+### 子代理列表
+
 AutoCraft 依赖以下 OpenClaw 子代理：
 
 | 代理 ID | 用途 | 推荐模型 |

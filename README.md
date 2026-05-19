@@ -104,10 +104,13 @@ npm run dev
 AutoCraft 使用 OpenClaw 运行 AI 子代理，需要先配置：
 
 ```bash
-# 创建子代理
+# 1. 应用补丁（重要）
+bash openclaw-config/patches/apply-patch.sh
+
+# 2. 创建子代理
 bash openclaw-config/setup-agents.sh
 
-# 编辑模型配置，填入 API Key
+# 3. 编辑模型配置，填入 API Key
 vim ~/.openclaw/agents/ac-executor/agent/models.json
 ```
 

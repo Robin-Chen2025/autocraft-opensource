@@ -83,3 +83,8 @@ echo ""
 echo "访问地址:"
 echo "  前端: http://localhost:5173"
 echo "  API:  http://localhost:9001/docs"
+
+# 应用补丁
+echo ""
+echo "=== 应用 OpenClaw 补丁 ==="
+bash openclaw-config/patches/apply-patch.sh || echo "⚠️  补丁应用失败，请手动处理"
