@@ -4,7 +4,7 @@
 
 AutoCraft is an AI-based task management system that supports a four-level management structure (Project → Phase → Plan → Task), with integrated AI sub-agent automatic execution and task verification.
 
-> **💡 Scope**: AutoCraft itself is a **general-purpose task management platform**, suitable for any scenario requiring structured task decomposition and AI automated execution (software development, content creation, data analysis, operations workflows, etc.). The built-in `autocraft-dev` Skill currently focuses on **software development projects**, with more domain-specific Skills coming soon.
+> **💡 Scope**: AutoCraft itself is a **general-purpose task management platform**, suitable for any scenario requiring structured task decomposition and AI automated execution (software development, content creation, data analysis, operations workflows, etc.). The built-in `autocraft-dev` Skill currently focuses on **software development projects**. You can create Skills for your own domain based on this template, contributions welcome.
 
 ## ✨ Core Features
 
