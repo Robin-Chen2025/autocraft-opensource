@@ -1,0 +1,61 @@
+/* 输入框和选择器样式 - Part 2 */
+
+/* 1. 输入框 */
+.el-input__inner,
+.el-textarea__inner {
+  background-color: #0d1117 !important;
+  border: 1px solid #30363d !important;
+  color: #c9d1d9 !important;
+  border-radius: 8px !important;
+}
+
+.el-input__inner:hover,
+.el-textarea__inner:hover {
+  border-color: #00d4ff !important;
+}
+
+.el-input__inner:focus,
+.el-textarea__inner:focus {
+  border-color: #00d4ff !important;
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.4) !important;
+}
+
+/* 2. 只读输入框 */
+.el-input.is-disabled .el-input__inner {
+  background-color: #161b22 !important;
+  color: #6e7681 !important;
+}
+
+/* 3. 选择器 */
+.el-select .el-input__inner {
+  background-color: #0d1117 !important;
+  border: 1px solid #30363d !important;
+  color: #c9d1d9 !important;
+  border-radius: 8px !important;
+}
+
+.el-select .el-input__inner:hover {
+  border-color: #00d4ff !important;
+}
+
+.el-select .el-input__inner:focus {
+  border-color: #00d4ff !important;
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.4) !important;
+}
+
+/* 4. 日期选择器 */
+.el-date-editor.el-input__inner {
+  background-color: #0d1117 !important;
+  border: 1px solid #30363d !important;
+  color: #c9d1d9 !important;
+  border-radius: 8px !important;
+}
+
+.el-date-editor.el-input__inner:hover {
+  border-color: #00d4ff !important;
+}
+
+.el-date-editor.el-input__inner:focus {
+  border-color: #00d4ff !important;
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.4) !important;
+}

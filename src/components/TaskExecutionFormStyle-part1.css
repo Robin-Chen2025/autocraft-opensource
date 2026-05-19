@@ -1,0 +1,43 @@
+/* TaskExecutionForm 样式 - Part 1: CSS变量和基础样式 */
+
+/* CSS变量 */
+:root {
+  --tech-primary: #00d4ff;
+  --tech-primary-glow: rgba(0, 212, 255, 0.3);
+  --tech-bg-dark: #0d1117;
+  --tech-bg-card: #1a1f2e;
+  --tech-border: #30363d;
+  --tech-text-primary: #c9d1d9;
+  --tech-text-secondary: #8b949e;
+}
+
+/* 表单容器 */
+.task-form-container {
+  background: linear-gradient(135deg, var(--tech-bg-dark) 0%, #161b22 100%);
+  padding: 24px;
+}
+
+/* 卡片样式 */
+.el-card {
+  background: linear-gradient(145deg, var(--tech-bg-card) 0%, #21283a 100%);
+  border: 1px solid var(--tech-primary);
+  border-radius: 12px;
+  box-shadow: 0 0 20px var(--tech-primary-glow), 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 卡片头部 */
+.el-card__header {
+  background: linear-gradient(90deg, rgba(0, 212, 255, 0.1) 0%, transparent 100%);
+  border-bottom: 1px solid var(--tech-border);
+}
+
+.el-card__header h3 {
+  color: var(--tech-primary);
+  text-shadow: 0 0 10px var(--tech-primary-glow);
+  margin: 0;
+}
+
+/* 表单标签 */
+.el-form-item__label {
+  color: var(--tech-text-primary);
+}
