@@ -50,8 +50,22 @@ autocraft/
 - Python 3.10+
 - Node.js 18+
 - npm 或 pnpm
+- OpenClaw (用于 AI 子代理)
 
-### 后端启动
+### 一键部署
+
+```bash
+# 克隆项目
+git clone https://github.com/your-username/autocraft.git
+cd autocraft
+
+# 运行部署脚本
+bash scripts/deploy.sh
+```
+
+### 手动部署
+
+#### 后端启动
 
 ```bash
 cd backend
@@ -65,7 +79,7 @@ source venv/bin/activate  # Linux/Mac
 pip install -r requirements.txt
 
 # 初始化数据库
-python scripts/init_db.py
+python init_db.py
 
 # 启动服务
 uvicorn main:app --host 0.0.0.0 --port 9001 --reload
@@ -73,7 +87,7 @@ uvicorn main:app --host 0.0.0.0 --port 9001 --reload
 
 后端 API 文档: http://localhost:9001/docs
 
-### 前端启动
+#### 前端启动
 
 ```bash
 # 安装依赖
@@ -84,6 +98,20 @@ npm run dev
 ```
 
 前端界面: http://localhost:5173
+
+### OpenClaw 子代理配置
+
+AutoCraft 使用 OpenClaw 运行 AI 子代理，需要先配置：
+
+```bash
+# 创建子代理
+bash openclaw-config/setup-agents.sh
+
+# 编辑模型配置，填入 API Key
+vim ~/.openclaw/agents/ac-executor/agent/models.json
+```
+
+详见 [部署指南](DEPLOYMENT.md) 和 [OpenClaw 配置](openclaw-config/README.md)。
 
 ## 📖 API 文档
 
