@@ -108,20 +108,20 @@ def mark_knowledge_feature(
     id: int,
     request: KnowledgeFeatureRequest,
     db: Session = Depends(get_db),
-    x_agent_role: Optional[str] = Header(None, alias="X-Agent-Role", description="代理角色（主代理/Boss）")
+    x_agent_role: Optional[str] = Header(None, alias="X-Agent-Role", description="代理角色")
 ):
     """
     标记知识条目为优质内容
 
-    - 需要权限校验：仅主代理或 Boss 可操作
+    - 需要权限校验：仅管理员 可操作
     - 支持标记/取消标记优质
     - 自动记录操作人和操作时间
     """
-    # 权限校验：仅允许主代理或 Boss 操作
-    if not x_agent_role or x_agent_role not in ["主代理", "Boss"]:
+    # 权限校验：仅允许管理员 操作
+    if not x_agent_role or x_agent_role not in ["主代理", "管理员"]:
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,
-            detail="权限不足：仅主代理或 Boss 可标记优质知识"
+            detail="权限不足：仅管理员 可标记优质知识"
         )
     
     # 获取知识条目

@@ -36,10 +36,10 @@ openclaw agent create ac-planner
 {
   "agents": {
     "ac-executor": {
-      "model": "deepseek-chat"
+      "model": "your-model-id"  // 替换为实际使用的模型
     },
     "ac-validator": {
-      "model": "deepseek-reasoner"
+      "model": "your-model-id"  // 替换为实际使用的模型
     }
   }
 }
@@ -63,9 +63,9 @@ bash openclaw-config/patches/apply-patch.sh
 
 ## 模型选择建议
 
-| 用途 | 推荐模型 | 原因 |
+| 用途 | 推荐特性 | 说明 |
 |------|----------|------|
-| 任务执行 | GLM-4, DeepSeek-Chat | 性价比高，响应快 |
-| 任务验证 | DeepSeek-Reasoner | 推理能力强 |
-| 代码生成 | GLM-4, GPT-4 | 代码质量高 |
-| 任务规划 | GLM-4 | 上下文窗口大 |
+| 任务执行 | 性价比高、响应快 | 通用对话模型 |
+| 任务验证 | 推理能力强 | 推理增强模型 |
+| 代码生成 | 代码质量高 | 代码专用模型 |
+| 任务规划 | 上下文窗口大 | 长上下文模型 |

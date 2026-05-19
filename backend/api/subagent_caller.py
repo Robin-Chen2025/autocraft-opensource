@@ -7,7 +7,7 @@ FlowTicket v2 真实子代理调用模块 - 严格遵循设计文档要求
 3. 任务完成后：关闭session模式子代理
 
 实现方式：使用OpenClaw的sessions_spawn API
-AI模型（Boss指定）：
+AI模型（推荐配置）：
 - 执行节点：GLM-5.1（推理能力强，适合复杂任务执行）
 - 验证节点：DeepSeek-V3.2-thinking（思维链推理，适合深度验证）
 """
@@ -26,7 +26,7 @@ logger = logging.getLogger("subagent_caller")
 
 # ==================== 配置 ====================
 
-# AI模型配置（根据Boss要求更新）
+# AI模型配置（推荐）
 EXECUTION_MODEL = "glm-5.1"  # 执行子代理：GLM-5.1，推理能力强，适合复杂任务执行
 VERIFICATION_MODEL = "deepseek-v3.2-thinking"  # 验证子代理：DeepSeek-V3.2-thinking，思维链推理，适合深度验证
 

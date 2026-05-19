@@ -81,10 +81,10 @@ AutoCraft 依赖以下 OpenClaw 子代理：
 
 | 代理 ID | 用途 | 推荐模型 |
 |---------|------|----------|
-| `ac-executor` | 任务执行 | GLM-5, DeepSeek-V3 |
-| `ac-validator` | 任务验证 | DeepSeek-V4-Pro, GLM-5 |
-| `ac-builder` | 代码构建 | GLM-5 |
-| `ac-planner` | 任务规划 | GLM-5 |
+| `ac-executor` | 任务执行 | 推荐使用通用对话模型 |
+| `ac-validator` | 任务验证 | 推荐使用推理增强模型 |
+| `ac-builder` | 代码构建 | 推荐使用代码能力强的模型 |
+| `ac-planner` | 任务规划 | 推荐使用上下文窗口大的模型 |
 
 ### 创建子代理
 
@@ -145,7 +145,11 @@ openclaw agent create ac-planner
 
 ## 📝 模型提供商配置
 
-### DeepSeek
+### 模型提供商示例
+
+以下是一些常见的模型提供商配置示例，请根据实际情况选择：
+
+#### DeepSeek
 
 ```json
 {
@@ -161,7 +165,9 @@ openclaw agent create ac-planner
 }
 ```
 
-### 智谱 AI (GLM)
+### 智谱 AI
+
+示例配置，请根据实际 API 调整：
 
 ```json
 {
