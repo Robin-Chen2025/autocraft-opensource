@@ -7,8 +7,8 @@ AutoCraft 是一个基于 AI 的任务管理系统，支持项目、阶段、计
 - **四级项目管理**: 项目(Project) → 阶段(Phase) → 计划(Plan) → 任务(Task)
 - **AI 任务执行**: 集成 OpenClaw AI 代理，自动执行任务
 - **自动验证**: 任务执行完成后自动触发验证流程
-- **知识库管理**: 支持知识点、知识图谱的管理
-- **Issue 跟踪**: 完整的问题跟踪和解决方案管理
+- **任务锁定机制**: 防止并发冲突，确保任务执行安全
+- **模板驱动**: 执行和验证提示词模板化，灵活可配置
 
 ## 🏗️ 技术栈
 
@@ -40,8 +40,10 @@ autocraft/
 │   ├── views/               # 页面视图
 │   ├── router/              # 路由配置
 │   └── types/               # TypeScript 类型
-├── templates/               # 模板文件
-└── public/                  # 静态资源
+├── openclaw-config/         # OpenClaw 配置
+│   ├── patches/             # 补丁文件
+│   └── setup-agents.sh      # 子代理创建脚本
+└── scripts/                 # 部署脚本
 ```
 
 ## 🚀 快速开始
@@ -110,8 +112,7 @@ bash openclaw-config/patches/apply-patch.sh
 # 2. 创建子代理
 bash openclaw-config/setup-agents.sh
 
-# 3. 编辑模型配置，填入 API Key
-vim ~/.openclaw/agents/ac-executor/agent/models.json
+# 3. 模型配置由 OpenClaw 统一管理
 ```
 
 详见 [部署指南](DEPLOYMENT.md) 和 [OpenClaw 配置](openclaw-config/README.md)。
@@ -143,6 +144,34 @@ vim ~/.openclaw/agents/ac-executor/agent/models.json
 - `GET /tasks/{task_no}` - 获取任务详情
 - `PUT /tasks/{task_no}` - 更新任务
 
+### 任务执行
+- `POST /api/v2/tasks/{task_id}/execute` - 执行任务
+- `GET /api/v2/tasks/{task_id}/status` - 获取执行状态
+
+## 📝 开发路线
+
+### 已完成 ✅
+- [x] 四级项目管理结构
+- [x] AI 任务执行引擎
+- [x] 自动验证流程
+- [x] 任务锁定机制
+- [x] 模板化提示词
+
+### 进行中 🔄
+- [ ] 任务执行日志详情页
+- [ ] 执行进度实时推送
+
+### 计划中 📋
+- [ ] **Issue 跟踪系统** - 问题跟踪与解决方案管理
+- [ ] **知识库管理** - 知识点、知识图谱管理
+- [ ] **检查清单** - 任务执行检查清单
+- [ ] **用户权限管理** - 多用户、角色权限
+- [ ] **数据统计报表** - 项目进度、执行效率统计
+- [ ] **任务模板** - 常用任务模板库
+- [ ] **批量操作** - 批量创建、执行、验证
+- [ ] **Webhook 通知** - 任务状态变更通知
+- [ ] **Docker 部署** - 一键 Docker 部署
+
 ## 🔧 配置说明
 
 ### 后端配置
@@ -151,21 +180,23 @@ vim ~/.openclaw/agents/ac-executor/agent/models.json
 ### 前端配置
 API 基础路径配置在 `src/api/` 目录下的各个文件中。
 
-## 📝 开发路线
-
-- [x] 四级项目管理结构
-- [x] AI 任务执行引擎
-- [x] 自动验证流程
-- [x] 知识库管理
-- [x] Issue 跟踪
-- [ ] 用户权限管理
-- [ ] 任务执行日志详情
-- [ ] 数据统计与报表
-
 ## 🤝 贡献指南
 
 欢迎提交 Issue 和 Pull Request！
 
+### 开发指南
+1. Fork 本仓库
+2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 创建 Pull Request
+
 ## 📄 许可证
 
 MIT License
+
+## 🙏 致谢
+
+- [OpenClaw](https://github.com/openclaw/openclaw) - AI 代理运行时
+- [FastAPI](https://fastapi.tiangolo.com) - 现代化 API 框架
+- [Vue.js](https://vuejs.org) - 渐进式前端框架
