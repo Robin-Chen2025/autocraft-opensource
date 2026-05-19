@@ -112,7 +112,7 @@ def _call_task_api_via_http(task_id: int, endpoint: str, payload: dict) -> bool:
     try:
         # API基础URL配置
         # 开发环境: http://localhost:9001/api/v2/tasks
-        # 生产环境: http://116.205.236.25:8001/api/v2/tasks
+        # 生产环境: http://localhost:9001/api/v2/tasks
         base_url = "http://localhost:9001/api/v2/tasks"
         url = f"{base_url}/{task_id}/{endpoint}"
         
